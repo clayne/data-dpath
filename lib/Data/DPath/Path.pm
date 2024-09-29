@@ -52,7 +52,7 @@ sub unquote {
 
 sub quoted { shift =~ m,^/["'],; }                                             # "
 
-eval 'use overload "~~" => \&op_match' if $] >= 5.010;
+eval 'use overload "~~" => \&op_match' if $] >= 5.010 and $] < 5.041003;
 
 sub op_match {
         my ($self, $data, $rhs) = @_;
